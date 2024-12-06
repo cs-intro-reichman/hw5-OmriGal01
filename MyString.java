@@ -19,10 +19,10 @@ public class MyString {
         System.out.println(randomStringOfLetters(100));
         System.out.println(randomStringOfLetters(20));
         System.out.println(randomStringOfLetters(5));
-        System.out.println(remove("meet", "committee"));
-        System.out.println(remove("slab", "blasphemy"));
-        System.out.println(remove("aaa", "aaaaa"));
-        System.out.println(remove("abc", "zzzfabc"));
+        System.out.println(remove("committee", "meet"));
+        System.out.println(remove("blasphemy", "slab"));
+        System.out.println(remove("aaaaa", "aaa"));
+        System.out.println(remove("zzzfabc", "abc"));
         System.out.println(insertRandomly('a', "zzzbcd"));
         //// Put your other tests here.
     }
@@ -115,10 +115,10 @@ public class MyString {
      */
     public static String remove(String str1, String str2) {
         String removed = "";
-        for (int i = 0; i < str2.length(); i++) {
-            int charCount = countChar(str2, str2.charAt(i)) - countChar(str1, str2.charAt(i));
-            if (charCount > countChar(removed, str2.charAt(i))) {
-                removed += str2.charAt(i);
+        for (int i = 0; i < str1.length(); i++) {
+            int charCount = countChar(str1, str1.charAt(i)) - countChar(str2, str1.charAt(i));
+            if (charCount > countChar(removed, str1.charAt(i))) {
+                removed += str1.charAt(i);
             }
         }
         return removed;
