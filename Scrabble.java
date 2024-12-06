@@ -110,7 +110,7 @@ public class Scrabble {
 				int givenWordScore = wordScore(input);
 				score += givenWordScore;
 				System.out.println(input + " earned " + givenWordScore + " points. Score: " + score + " points");
-				hand = MyString.remove(input, hand);
+				hand = MyString.remove(hand, input);
 			}
 			else {
 				System.out.println("No such word in the dictionary. Try Again.");
@@ -178,7 +178,7 @@ public class Scrabble {
 	}
 	public static void testPlayHands() {
 		init();
-		playHand("ocostrza");
+		//playHand("ocostrza");
 		//playHand("arbffip");
 		//playHand("aretiin");
 	}
