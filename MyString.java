@@ -77,7 +77,7 @@ public class MyString {
         if (str.length() == 0) {
             return "";
         }
-        
+
         String spaced = "";
         for (int i = 0; i < str.length() - 1; i++) {
             spaced += str.charAt(i) + " ";
@@ -114,18 +114,20 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2
      */
     public static String remove(String str1, String str2) {
-        for (int i = 0; i < str1.length(); i++) {
-            char charAtI = str1.charAt(i);
-            int indexOfChar = str2.indexOf(charAtI);
-            str2 = str2.substring(0, indexOfChar) + ((indexOfChar < str2.length() - 1) ? str2.substring(indexOfChar + 1, str2.length()) : "" );
+        String removed = "";
+        for (int i = 0; i < str2.length(); i++) {
+            int charCount = countChar(str2, str2.charAt(i)) - countChar(str1, str2.charAt(i));
+            if (charCount > countChar(removed, str2.charAt(i))) {
+                removed += str2.charAt(i);
+            }
         }
-        return str2;
+        return removed;
     }
 
     /**
      * Returns a string consisting of the given string, with the given 
      * character inserted randomly somewhere in the string.
-     * For example, insertRandomly("s","cat") can return "scat", or "csat", or "cast", or "cats".  
+     * For example, insertRandomly("s","cat") can return "scat", or "csat", or "cast", or "cats".
      * @param ch - a character
      * @param str - a string
      * @return a string consisting of str with ch inserted somewhere
