@@ -110,7 +110,7 @@ public class Scrabble {
 				hand = MyString.remove(hand, input);
 			}
 			else {
-				System.out.println("No such word in the dictionary. Try Again.");
+				System.out.println("Invalid word. Try again.");
 			}
 		}
 		if (hand.length() == 0) {
